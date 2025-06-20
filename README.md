@@ -1,6 +1,6 @@
 # Personal Immersion Tracker 
 
-This project is a personal immersion tracking tool built with FastAPI, Supabase, and Streamlit. It fulfills the core requirements of the Keploy API Fellowship by implementing a custom API with 4+ endpoints, full CRUD functionality, and integration with a real database. Users can log time spent on various language immersion activities, update or delete their logs, and view statistics like total time by activity type. A simple Streamlit-based frontend is also provided for interacting with the API.
+This project is a personal immersion tracking tool built with FastAPI, Supabase, and Streamlit. It fulfills the  requirements of the Keploy API Fellowship Assignment #2 by implementing a custom API with 4+ endpoints, full CRUD functionality, and integration with a real database. Users can log time spent on various language immersion activities, update or delete their logs, and view statistics like total time by activity type. A simple Streamlit-based frontend is also provided for interacting with the API.
 
 ## Features
 
