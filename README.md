@@ -33,7 +33,7 @@ This project is a personal immersion tracking tool built with FastAPI, Supabase,
 | DELETE | `/log/{log_id}`   | Delete a specific log              |
 
 ---
-## 📚 API Documentation
+## API Documentation
 
 ## Example Log Format
 
