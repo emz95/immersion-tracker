@@ -33,6 +33,7 @@ This project is a personal immersion tracking tool built with FastAPI, Supabase,
 | DELETE | `/log/{log_id}`   | Delete a specific log              |
 
 ---
+## 📚 API Documentation
 
 ## Example Log Format
 
@@ -45,7 +46,94 @@ This project is a personal immersion tracking tool built with FastAPI, Supabase,
 }
 ```
 
-## 🛠 Setup Instructions
+### Add a New Immersion Log
+
+**POST** `/log`
+
+**Request Body:**
+
+```json
+{
+  "type": "listening",
+  "duration": 30,
+  "description": "Watched anime",
+  "date": "2025-06-19"
+}
+```
+**Response:**
+
+```json
+{
+  "status_code": 200,
+  "data": [...]
+}
+```
+
+### Retrieve All Logs
+
+**GET** `/logs`
+
+**Response:**
+
+```json
+[
+  {
+    "id": "uuid-string",
+    "type": "reading",
+    "duration": 25,
+    "description": "Read a Japanese blog",
+    "date": "2025-06-19"
+  }
+]
+```
+### Get Total Time
+
+**GET** `/time?selected_type=reading`  
+*(Query param `selected_type` is optional)*
+
+**Response:**
+
+```json
+{
+  "total_duration": 95
+}
+```
+### Update a Log
+
+**PUT** `/log/{log_id}`
+
+**Request Body:**
+
+```json
+{
+  "type": "reading",
+  "duration": 45,
+  "description": "Updated log",
+  "date": "2025-06-20"
+}
+```
+**Response:**
+
+```json
+{
+  "status_code": 200,
+  "data": [...]
+}
+```
+### Delete a Log
+
+**DELETE** `/log/{log_id}`
+
+**Response:**
+
+```json
+{
+  "status_code": 200,
+  "message": "Log deleted successfully"
+}
+```
+
+## Setup Instructions
 
 ### 1. Clone the repository
 
