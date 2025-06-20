@@ -14,6 +14,10 @@ class ImmersionLog(BaseModel):
     duration: int
     description: str
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Immersion Tracker"}
+
 @app.post("/log")
 def create_log(log: ImmersionLog):
     res = supabase.table("immersion_logs").insert(log.dict()).execute()
