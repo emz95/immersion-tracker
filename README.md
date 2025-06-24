@@ -202,7 +202,7 @@ Make sure you're in your virtual environment.
 ```bash
 pip install -r requirements.txt
 PYTHONPATH=. pytest --cov=main --cov-report=term-missing tests/
-
+```
 ### Coverage
 Achieved 87% test coverage on main.py.
 
