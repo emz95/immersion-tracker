@@ -20,7 +20,7 @@ def root():
 
 @app.post("/log")
 def create_log(log: ImmersionLog):
-    res = supabase.table("immersion_logs").insert(log.dict()).execute()
+    res = supabase.table("immersion_logs").insert(log.model_dump()).execute()
     return res.data
 
 @app.get("/logs")
