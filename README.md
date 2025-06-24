@@ -180,4 +180,31 @@ streamlit run streamlit_app.py
 Then open your browser and go to: [http://localhost:8501](http://localhost:8501)
 
 
+## Testing
+
+This project includes unit tests, integration tests, and API tests for the FastAPI server.
+
+### Test Types
+
+- Unit Tests: Logic tested with mocked Supabase responses.
+- Integration/API Tests: Full end-to-end flow (Create → Read → Update → Delete) using real Supabase.
+
+### Frameworks/Tools Used
+
+- pytest – for writing and running tests
+- pytest-cov – to generate coverage reports
+- pytest-mock – for mocking Supabase
+
+### How to Run Tests
+
+Make sure you're in your virtual environment.
+
+```bash
+pip install -r requirements.txt
+PYTHONPATH=. pytest --cov=main --cov-report=term-missing tests/
+
+### Coverage
+Achieved 87% test coverage on main.py.
+
+![Test Coverage Screenshot](./coverage.png)
 
