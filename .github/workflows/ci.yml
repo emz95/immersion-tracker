@@ -23,8 +23,11 @@ jobs:
         pip install -r requirements.txt
 
     - name: Start FastAPI server
-      run: uvicorn main:app --host 127.0.0.1 --port 8000 &
-      # Adjust if your entry point is different (e.g., app/main.py:app)
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      run: |
+        uvicorn main:app --host 127.0.0.1 --port 8000 &
 
     - name: Wait for server to be ready
       run: |
@@ -38,6 +41,10 @@ jobs:
       run: curl --silent -L https://keploy.io/ent/install.sh | bash
 
     - name: Run Keploy Test Suite
+      env:
+        KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
       run: |
-        export KEPLOY_API_KEY=${{ secrets.KEPLOY_API_KEY }}
+      
         keploy test-suite --app=a6144a66-5cab-4237-b7dc-0626fb7a22c7 --base-path http://127.0.0.1:8000 --cloud
