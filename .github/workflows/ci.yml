@@ -46,5 +46,4 @@ jobs:
         SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
         SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
       run: |
-      
         keploy test-suite --app=a6144a66-5cab-4237-b7dc-0626fb7a22c7 --base-path http://127.0.0.1:8000 --cloud
