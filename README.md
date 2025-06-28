@@ -212,4 +212,4 @@ Achieved 87% test coverage on main.py.
 
 Successfully ran end-to-end API tests using Keploy in CI/CD with GitHub Actions.
 
-![Keploy Tests Passed](./path/to/your/screenshot.png)
+![Keploy Tests Passed](./tests.png)
